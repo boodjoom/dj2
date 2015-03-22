@@ -1,0 +1,13 @@
+#!/bin/bash
+killall remserial
+./remserial -d -r 192.168.1.2 -p 23000 -l /dev/rs485_1 /dev/ptmx &
+./remserial -d -r 192.168.1.2 -p 23000 -l /dev/rs485_2 /dev/ptmx &
+./remserial -d -r 192.168.1.2 -p 23000 -l /dev/rs485_3 /dev/ptmx &
+./remserial -d -r 192.168.1.2 -p 23000 -l /dev/rs485_4 /dev/ptmx &
+./remserial -d -r 192.168.1.2 -p 23000 -l /dev/rs485_5 /dev/ptmx &
+sleep 1
+chown shark /dev/rs485_1
+chown shark /dev/rs485_2
+chown shark /dev/rs485_3
+chown shark /dev/rs485_4
+chown shark /dev/rs485_5

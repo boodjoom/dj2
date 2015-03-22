@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ ! $# == 1 ]; then
+  echo "Usage: $0 robot@ip"
+  exit
+fi
+
+scp kvn.sh press_return rhsay_server.py rs485_server_0068E837 $1:~
+ssh $1 chmod +x rhsay_server.py rs485_server_0068E837 kvn.sh press_return
+
