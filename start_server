@@ -1,0 +1,3 @@
+#!/bin/bash
+./rhsay_server_respawn&
+./rs485_server_respawn&
