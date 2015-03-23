@@ -1,0 +1,5 @@
+#!/bin/bash
+until ./rs485_server; do
+    echo "Server 'rs485' crashed with exit code $?.  Respawning.." >&2
+    sleep 5
+done
