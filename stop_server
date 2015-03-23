@@ -1,0 +1,5 @@
+#!/bin/bash
+killall rhsay_server_respawn
+killall python
+killall rs485_server_respawn
+sudo killall remserial

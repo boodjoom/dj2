@@ -1,0 +1,4 @@
+#!/bin/bash
+./stop_server
+sleep 1
+./start_server
