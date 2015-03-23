@@ -1,0 +1,3 @@
+#!/bin/bash
+sudo ./remote_rs485
+./rs485_wrapper
