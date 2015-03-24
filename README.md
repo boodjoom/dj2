@@ -22,4 +22,5 @@ dj2 controll software
 3. cd dj2
 4. ./update_pult
 5. подключится к сети робота
-6. ./remote_push lubuntu@192.168.1.2
+6. проверить IP адрес робота в файле dj2_ip.conf
+6. ./remote_push

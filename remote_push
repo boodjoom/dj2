@@ -1,10 +1,10 @@
 #!/bin/bash
 
-if [ ! $# == 1 ]; then
-  echo "Usage: $0 robot@ip"
-  exit
-fi
+#if [ ! $# == 1 ]; then
+#  echo "Usage: $0 robot@ip"
+#  exit
+#fi
 
-scp start_server rhsay_server_respawn dj2_ip.conf rs485_server_respawn rs485_server press_return rhsay_server.py rs485_server_0068E837 rs485_server_0068E83A $1:~
-ssh $1 chmod +x start_server rhsay_server_respawn rs485_server_respawn rs485_server rhsay_server.py rs485_server_0068E837 rs485_server_0068E83A press_return
+scp start_server rhsay_server_respawn dj2_ip.conf rs485_server_respawn rs485_server press_return rhsay_server.py rs485_server_0068E837 rs485_server_0068E83A lubuntu@`cat dj2_ip.conf`:~
+ssh lubuntu@`cat dj2_ip.conf` chmod +x start_server rhsay_server_respawn rs485_server_respawn rs485_server rhsay_server.py rs485_server_0068E837 rs485_server_0068E83A press_return
 
