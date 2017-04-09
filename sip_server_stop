@@ -1,0 +1,6 @@
+#!/bin/bash
+/usr/bin/killall sip_mute_demon
+/usr/bin/linphonecsh exit
+/bin/sleep 5
+/usr/bin/linphonecsh exit
+

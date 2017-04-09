@@ -1,0 +1,67 @@
+#!/bin/bash
+
+set -e
+
+if [ $# = 0 ]; then
+	echo "Speek by RHVoice. Log in /tmp/rhplay.log"
+	echo "Usage: rhsay [OPTIONS] text_to_say"
+	echo "OPTIONS:"
+	echo "	-g	gender:male,female"
+	echo "	-s	speed:slow,normal,fast"
+	echo "	-p	pitch:low,normal,high"
+	echo "  -o  otput to file"
+	echo "defaults: -g male -s normal -p normal"
+	exit 10
+fi
+
+voice="Aleksandr"
+speed=52
+pitch=60
+params=1
+file_name=""
+
+while getopts ":g:s:p:o:" opt ;
+do
+case $opt in
+g)		case $OPTARG in
+		'male')voice="Aleksandr";;
+		'female')voice="Elena";;
+		*)echo "Wrong param. Using defaults";;
+	  esac
+	params=$params+2
+            ;;
+        s)case $OPTARG in
+		'slow')speed=40;;
+		'normal')speed=55;;
+		'fast')speed=70;;
+		*)echo "Wrong param. Using defaults";;
+	  esac
+	params=$params+2 
+            ;;
+        p) case $OPTARG in
+		'low')pitch=40;;
+		'normal')pitch=60;;
+		'high')pitch=80;;
+		*)echo "Wrong param. Using defaults";;
+	  esac
+	params=$params+2
+           ;;
+o) file_name=$OPTARG
+	params=$params+2
+           ;;
+        *) echo "Wrong param. Using defaults"
+            ;;
+        esac
+done
+#echo "${@:$params:$(($#-1))}"
+#echo $speed
+#echo $pitch
+#echo $voice
+#"${@:$params:$(($#))}"
+if [ -z $file_name ]; then
+	echo "${@:$params:$(($#))}" | /usr/local/bin/RHVoice -r $speed -v 50 -p $pitch -W $voice | aplay - > /tmp/rhplay.log 2>&1
+else
+	echo "${@:$params:$(($#))}" | /usr/local/bin/RHVoice -r $speed -v 50 -p $pitch -W $voice > $file_name
+fi
+#echo $2 > /tmp/text_to_say.txt
+exit 0

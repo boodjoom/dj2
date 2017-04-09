@@ -1,0 +1,5 @@
+#!/bin/bash
+while [ 1 ]; do
+   /usr/bin/linphonecsh generic "mute"
+   /bin/sleep 60
+done

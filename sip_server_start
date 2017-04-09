@@ -1,0 +1,7 @@
+#!/bin/bash
+/usr/bin/linphonecsh init "-a"
+/bin/sleep 5
+/usr/bin/linphonecsh soundcard playback 3
+/usr/bin/linphonecsh soundcard capture 3
+/usr/bin/linphonecsh soundcard ring 3
+/home/bananapi/dj2/sip_mute_demon&
