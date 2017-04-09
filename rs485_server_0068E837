@@ -1,2 +1,2 @@
 #!/bin/bash
-remserial -m 5 -d -p 23000 -s "9600 raw" /dev/serial/by-id/usb-Silicon_Labs_boteon.com_USB-RS485_0068E837-if00-port0
+/usr/bin/remserial -m 5 -d -p 23000 -s "9600 raw" /dev/serial/by-id/usb-Silicon_Labs_boteon.com_USB-RS485_0068E837-if00-port0

@@ -10,8 +10,9 @@ def do_something(x):
 	#if x == "PREV\n":
 	#else :
 	#	return "NACK"
-	retcode = subprocess.call(["rhsay", '"'+x+'"'])
+	retcode = subprocess.call(["/usr/local/bin/rhsay", '"'+x+'"'])
 	if(retcode>0):
+                print retcode
 		return "NACK"
 	else:
 		return "ACK"

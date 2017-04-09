@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo killall rhsay_server_respawn
-sudo killall python
-sudo killall rs485_server_respawn
-sudo killall remserial
+/usr/bin/killall rhsay_server_respawn
+/usr/bin/killall python
+/usr/bin/killall rs485_server_respawn
+/usr/bin/killall remserial

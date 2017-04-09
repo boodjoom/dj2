@@ -1,5 +1,5 @@
 #!/bin/bash
-until python rhsay_server.py `cat dj2_ip.conf`; do
+until /usr/bin/python /home/bananapi/dj2/rhsay_server.py `cat /home/bananapi/dj2/dj2_ip.conf`; do
     echo "Server 'rhsay' crashed with exit code $?.  Respawning.." >&2
     sleep 1
 done
